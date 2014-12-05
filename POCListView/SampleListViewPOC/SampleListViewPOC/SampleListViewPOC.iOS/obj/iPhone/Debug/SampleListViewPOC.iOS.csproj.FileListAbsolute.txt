@@ -1,0 +1,13 @@
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC.iOS\obj\iPhone\Debug\
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC.iOS\obj\iPhone\Debug\SampleListViewPOC.iOS.csprojResolveAssemblyReference.cache
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC.iOS\bin\iPhone\Debug\FormsTemplateiOS.exe
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC.iOS\bin\iPhone\Debug\FormsTemplateiOS.pdb
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC.iOS\bin\iPhone\Debug\SampleListViewPOC.dll
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC.iOS\bin\iPhone\Debug\Xamarin.Forms.Core.dll
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC.iOS\bin\iPhone\Debug\Xamarin.Forms.Platform.iOS.dll
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC.iOS\bin\iPhone\Debug\Xamarin.Forms.Xaml.dll
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC.iOS\bin\iPhone\Debug\SampleListViewPOC.pdb
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC.iOS\bin\iPhone\Debug\Xamarin.Forms.Core.xml
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC.iOS\bin\iPhone\Debug\Xamarin.Forms.Xaml.xml
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC.iOS\obj\iPhone\Debug\FormsTemplateiOS.exe
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC.iOS\obj\iPhone\Debug\FormsTemplateiOS.pdb

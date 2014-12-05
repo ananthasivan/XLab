@@ -1,0 +1,7 @@
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC\obj\Debug\SampleListViewPOC.csprojResolveAssemblyReference.cache
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC\bin\Debug\SampleListViewPOC.dll
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC\bin\Debug\SampleListViewPOC.pdb
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC\bin\Debug\Xamarin.Forms.Core.dll
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC\bin\Debug\Xamarin.Forms.Core.xml
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC\obj\Debug\SampleListViewPOC.dll
+D:\Projects\POC\POCListView\SampleListViewPOC\SampleListViewPOC\SampleListViewPOC\obj\Debug\SampleListViewPOC.pdb
