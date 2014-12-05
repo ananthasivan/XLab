@@ -209,10 +209,12 @@ namespace SampleListViewPOC
             HybridWebView webView = new HybridWebView
             {
                 WidthRequest = 320,
-                HeightRequest = 800,
-                Source = new HtmlWebViewSource
-                {
-                    Html = @"<html>
+                HeightRequest = Device.OnPlatform(1136,800,800),
+            };
+
+            HtmlWebViewSource htmlSource = new HtmlWebViewSource
+                 {
+                     Html = @"<html>
                                 <head>
                                 <title>Travel FAQs</title>
                                 <style>
@@ -276,9 +278,14 @@ namespace SampleListViewPOC
                                 </div>
                                 </body>
                                 </html>"
-                }
+                 };
 
-            };
+            webView.Source = htmlSource;
+
+            if (Device.OS != TargetPlatform.iOS)
+            {
+                htmlSource.BaseUrl = DependencyService.Get<IBaseUrl>().Get();
+            }
 
             StackLayout sLayout = new StackLayout
             {
