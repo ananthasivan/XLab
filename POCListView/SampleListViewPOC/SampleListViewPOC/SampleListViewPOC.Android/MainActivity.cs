@@ -16,6 +16,7 @@ using SampleListViewPOC.Droid;
 
 [assembly: Xamarin.Forms.ExportRenderer(typeof(HybridWebView), typeof(HybridWebViewRenderer))]
 [assembly: Dependency(typeof(BaseUrl_Android))]
+[assembly: Dependency(typeof(DeviceSpecs_Android))]
 namespace SampleListViewPOC.Droid
 {
     [Activity(Label = "SampleListViewPOC", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]

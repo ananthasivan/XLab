@@ -113,6 +113,7 @@ namespace SampleListViewPOC
         #region PRIVATE VARIABLES
         ListView listView = null;
         System.Collections.ObjectModel.ObservableCollection<ActionIconList> actionIconListItems = null;
+        IDeviceSpecs spec = DependencyService.Get<IDeviceSpecs>();
         #endregion
 
         #region CONSTRUCTOR
@@ -208,8 +209,9 @@ namespace SampleListViewPOC
 
             HybridWebView webView = new HybridWebView
             {
-                WidthRequest = 320,
-                HeightRequest = Device.OnPlatform(1136,800,800),
+                WidthRequest = spec.ScreenWidth,
+
+                HeightRequest = spec.ScreenHeight,
             };
 
             HtmlWebViewSource htmlSource = new HtmlWebViewSource
@@ -227,7 +229,7 @@ namespace SampleListViewPOC
                                 </style>
                                 </head>
                                 <body>
-                                <div style='overflow:auto;height:800;'>
+                                <div style='overflow:auto;height:" + GetDivScrollHeight()+ @";'>
                                 <ul>
                                 <li>This is a paragraph.</li>
                                 <li>This is a paragraph.</li>
@@ -314,7 +316,23 @@ namespace SampleListViewPOC
             listView.BindingContext = this.BindingContext;
         }
 
-        
+        public static double GetDivScrollHeight()
+        {
+            IDeviceSpecs specs = DependencyService.Get<IDeviceSpecs>();
+            double scrollHeight = specs.ScreenHeight;
+
+            if (Device.OS == TargetPlatform.iOS)
+            {
+                scrollHeight = specs.ScreenHeight * 85 / 100;
+            }
+
+            if (Device.OS == TargetPlatform.Android)
+            {
+                scrollHeight = (specs.ScreenHeight / specs.ScreenDensity) * 82.5 / 100;
+            }
+
+            return scrollHeight;
+        }
     }
 
     #endregion

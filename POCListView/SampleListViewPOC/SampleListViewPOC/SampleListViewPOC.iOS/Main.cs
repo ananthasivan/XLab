@@ -10,6 +10,7 @@ using SampleListViewPOC;
 using SampleListViewPOC.iOS;
 
 [assembly: Dependency(typeof(BaseUrl_iOS))]
+[assembly: Dependency(typeof(DeviceSpecs_IOS))]
 [assembly: ExportRenderer(typeof(HybridWebView), typeof(HybridWebViewRenderer))]
 namespace SampleListViewPOC.iOS
 {
@@ -69,4 +70,39 @@ namespace SampleListViewPOC.iOS
         }
     }
     #endregion
+
+    public class DeviceSpecs_IOS : IDeviceSpecs
+    {
+
+
+        /// <summary>
+        /// Gets the width of the screen.
+        /// </summary>
+        /// <value>The width of the screen.</value>
+        public double ScreenWidth
+        {
+            get { return UIScreen.MainScreen.Bounds.Width; }
+        }
+
+        /// <summary>
+        /// Gets the height of the screen.
+        /// </summary>
+        /// <value>The height of the screen.</value>
+        public double ScreenHeight
+        {
+            get { return UIScreen.MainScreen.Bounds.Height; }
+        }
+
+        /// <summary>
+        /// Gets the screen density.
+        /// </summary>
+        /// <value>The screen density.</value>
+        public double ScreenDensity
+        {
+            get { return 0; }
+
+        }
+
+
+    }
 }
