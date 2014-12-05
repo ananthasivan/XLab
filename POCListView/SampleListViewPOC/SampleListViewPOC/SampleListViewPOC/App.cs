@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Xamarin.Forms;
 
 namespace SampleListViewPOC
@@ -13,6 +13,7 @@ namespace SampleListViewPOC
 
         public static Page GetMainPage()
         {
+
             Button btnGo = new Button
             {
                 Text = "Go",
@@ -54,6 +55,8 @@ namespace SampleListViewPOC
             Navigator.PushAsync(new ActionIconListView());
         }
         #endregion
+
+        
     }
 
     #region CLASS - BASEMODEL
@@ -101,6 +104,7 @@ namespace SampleListViewPOC
     }
     #endregion 
 
+    #region Class ActionIconListView.
     /// <summary>
     /// Class ActionIconListView.
     /// </summary>
@@ -121,18 +125,8 @@ namespace SampleListViewPOC
             #region LIST ITEMS
 
             listView = new ListView();
-            //listView.SetBinding(ListView.ItemsSourceProperty, "ListContent");
             listView.ItemTemplate = new DataTemplate(typeof(ActionIconListCell));
-            
-            //listView.ItemsSource = HomeEmergencyManager.GetActionListInfoForHomeEmergencyExclusions().ActionListItems;
-
             actionIconListItems = new System.Collections.ObjectModel.ObservableCollection<ActionIconList>();
-
-            //actionIconListItems.Add(new ActionIconList
-            //{
-            //    LeftIconName = "sample_spacer.png",
-            //    Title = "Sample List"
-            //});
 
             actionIconListItems.Add(new ActionIconList
             {
@@ -202,16 +196,104 @@ namespace SampleListViewPOC
             ActionIconList selectedActionList = e.Item as ActionIconList;
             //navigate to => respective item
 
+            Label lblTitle = new Label
+            {
+                VerticalOptions = LayoutOptions.Start,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                Text = selectedActionList.Title,
+                TextColor = Color.Black,
+                BackgroundColor = Color.Blue
+            };
+
+
+            HybridWebView webView = new HybridWebView
+            {
+                WidthRequest = 320,
+                HeightRequest = 800,
+                Source = new HtmlWebViewSource
+                {
+                    Html = @"<html>
+                                <head>
+                                <title>Travel FAQs</title>
+                                <style>
+                                li{
+                                     padding:0px 0px 10px 0px;
+                                }
+                                body {
+                                 -webkit-overflow-scrolling: touch;    
+                                }
+                                </style>
+                                </head>
+                                <body>
+                                <div style='overflow:auto;height:800;'>
+                                <ul>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                <li>This is a paragraph.</li>
+                                </ul>
+                                </div>
+                                </body>
+                                </html>"
+                }
+
+            };
+
+            StackLayout sLayout = new StackLayout
+            {
+                Orientation = StackOrientation.Vertical,
+                BackgroundColor = Color.White,
+                Children =
+                {
+                    lblTitle,
+                    webView
+                }
+            };
+
             ContentPage c = new ContentPage
             {
-                Content = new Label
-                {
-                    VerticalOptions = LayoutOptions.CenterAndExpand,
-                    HorizontalOptions = LayoutOptions.CenterAndExpand,
-                    Text = selectedActionList.Title,
-                    TextColor = Color.Black,
-                    BackgroundColor = Color.White
-                }
+                Content = sLayout
             };
 
             c.BackgroundColor = Color.Silver;
@@ -227,6 +309,8 @@ namespace SampleListViewPOC
 
         
     }
+
+    #endregion
 
     #region CUSTOM ICON LIST CELL
     class ActionIconListCell : ViewCell
@@ -300,5 +384,35 @@ namespace SampleListViewPOC
         }
     }
     #endregion
+
+
+    #region HYBRID WEB VIEW
+    public class HybridWebView : WebView { }
+    #endregion
+
+    public interface IBaseUrl { string Get(); }
+
+    #region Device Specs interface
+    public interface IDeviceSpecs
+    {
+        /// <summary>
+        /// Gets the width of the screen.
+        /// </summary>
+        /// <value>The width of the screen.</value>
+        double ScreenWidth { get; }
+        /// <summary>
+        /// Gets the height of the screen.
+        /// </summary>
+        /// <value>The height of the screen.</value>
+        double ScreenHeight { get; }
+        /// <summary>
+        /// Gets the screen density.
+        /// </summary>
+        /// <value>The screen density.</value>
+        double ScreenDensity { get; }
+    }
+    #endregion
+
+   
 
 }

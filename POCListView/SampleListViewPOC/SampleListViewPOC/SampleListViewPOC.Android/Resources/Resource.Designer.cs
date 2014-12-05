@@ -60,10 +60,7 @@ namespace SampleListViewPOC.Droid
 			public const int rtemp = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int sample_spacer = 2130837509;
-			
-			// aapt resource value: 0x7f020006
-			public const int ytemp = 2130837510;
+			public const int ytemp = 2130837509;
 			
 			static Drawable()
 			{

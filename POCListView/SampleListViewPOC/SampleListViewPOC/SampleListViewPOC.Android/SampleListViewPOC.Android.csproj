@@ -50,6 +50,9 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\packages\Autofac.3.5.2\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="FormsViewGroup">
       <HintPath>..\..\packages\Xamarin.Forms.1.2.3.6257\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
     </Reference>
@@ -90,18 +93,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
-    <AndroidResource Include="Resources\drawable-hdpi\sample_spacer.png" />
     <AndroidResource Include="Resources\drawable-hdpi\gtemp.png" />
     <AndroidResource Include="Resources\drawable-hdpi\rtemp.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\gtemp.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\rtemp.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\sample_spacer.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\gtemp.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\rtemp.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\sample_spacer.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\bltemp.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\brtemp.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ytemp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\bltemp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\brtemp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ytemp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\bltemp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\brtemp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ytemp.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SampleListViewPOC\SampleListViewPOC.csproj">

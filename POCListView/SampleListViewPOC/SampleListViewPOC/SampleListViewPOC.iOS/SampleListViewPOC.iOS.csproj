@@ -92,6 +92,9 @@
     <BundleResource Include="Resources\rtemp.png" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\packages\Autofac.3.5.2\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -120,6 +123,24 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\gtemp%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bltemp%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bltemp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\brtemp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\brtemp%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ytemp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ytemp%402x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
